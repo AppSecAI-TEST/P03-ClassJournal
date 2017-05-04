@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,7 @@ public class Main2Activity extends AppCompatActivity {
     ArrayAdapter aa;
     ArrayList<String> module_grade;
     ArrayList<ArrayList<String>> grade;
-    int requestCode = 1;
+    int requestCode1 = 1;
 
 
     Button btnInfo;
@@ -51,18 +52,19 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Main2Activity.this, Main3Activity.class);
-                i.putExtra("week",grade.size()+1);
+                i.putExtra("week", grade.size() + 1);
                 i.putExtra("image", module_grade.get(3));
                 i.putExtra("title", "DG");
-                startActivityForResult(i,requestCode);
+              startActivityForResult(i,requestCode1);
+
 
 
             }
         });
 
-
         btnInfo = (Button)findViewById(R.id.btnInfo);
         btnEmail = (Button)findViewById(R.id.btnEmail);
+
         btnInfo .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -101,7 +103,8 @@ public class Main2Activity extends AppCompatActivity {
             if (data != null) {
                 // Get data passed back from 2nd activity
                 String grade2= data.getStringExtra("grade");
-                if(requestCode == this.requestCode){
+                if(requestCode == requestCode1){
+                    module_grade = new ArrayList<String>();
                     module_grade.add("DG");
                     module_grade.add(grade2);
                     module_grade.add("Week "+(grade.size()+1));

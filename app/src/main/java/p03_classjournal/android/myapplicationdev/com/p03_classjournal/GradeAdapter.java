@@ -1,6 +1,7 @@
 package p03_classjournal.android.myapplicationdev.com.p03_classjournal;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,11 +54,14 @@ public class GradeAdapter extends ArrayAdapter<ArrayList<String>> {
         //  row ListView is requesting.
         //  We get back the food at the same index.
         ArrayList<String> currentGrade = grade.get(position);
+
         // Set the TextView to show the food
 
         tvTitle.setText(currentGrade.get(0));
         tvGrade.setText(currentGrade.get(1));
         tvWeek.setText(currentGrade.get(2));
+        int resID = this.context.getResources().getIdentifier(currentGrade.get(3) , "drawable", this.context.getPackageName());
+        ivImage.setImageResource(resID);
 
 
         // Return the nicely done up View to the ListView

@@ -23,22 +23,20 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+        tvWeek = (TextView)findViewById(R.id.textViewWeek);
+        tvDG = (TextView)findViewById(R.id.textViewDG);
+        iv = (ImageView)findViewById(R.id.imageView);
+        submit = (Button)findViewById(R.id.buttonSubmit);
         Intent i = getIntent();
         String title = i.getStringExtra("title");
         String image = i.getStringExtra("image");
         int week = i.getIntExtra("week",0);
 
-        tvWeek = (TextView)findViewById(R.id.textViewWeek);
-        tvDG = (TextView)findViewById(R.id.textViewDG);
-        iv = (ImageView)findViewById(R.id.imageView);
-        submit = (Button)findViewById(R.id.buttonSubmit);
-
 
         tvDG.setText(title);
         tvWeek.setText("Week " + week);
-//        int resID = Main3Activity.this.getResources().getIdentifier(image , "drawable", Main3Activity.this.getPackageName());
-//        iv.setImageResource(resID);
-//        iv.setImageResource(R.drawable.image);
+        int resID = Main3Activity.this.getResources().getIdentifier(image , "drawable", Main3Activity.this.getPackageName());
+        iv.setImageResource(resID);
 
 
 
