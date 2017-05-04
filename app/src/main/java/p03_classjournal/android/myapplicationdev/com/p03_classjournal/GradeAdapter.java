@@ -18,7 +18,7 @@ public class GradeAdapter extends ArrayAdapter<ArrayList<String>> {
 
     private ArrayList<ArrayList<String>> grade;
     private Context context;
-    private TextView tvGrade, tvTitle;
+    private TextView tvGrade, tvTitle, tvWeek;
     private ImageView ivImage;
 
     public GradeAdapter(Context context, int resource, ArrayList<ArrayList<String>> objects){
@@ -42,6 +42,7 @@ public class GradeAdapter extends ArrayAdapter<ArrayList<String>> {
         View rowView = inflater.inflate(R.layout.row, parent, false);
 
         // Get the TextView object
+        tvWeek = (TextView) rowView.findViewById(R.id.tvWeek);
         tvTitle = (TextView) rowView.findViewById(R.id.tvTitle);
         // Get the ImageView object
         ivImage = (ImageView) rowView.findViewById(R.id.ivImage);
@@ -56,6 +57,7 @@ public class GradeAdapter extends ArrayAdapter<ArrayList<String>> {
 
         tvTitle.setText(currentGrade.get(0));
         tvGrade.setText(currentGrade.get(1));
+        tvWeek.setText(currentGrade.get(2));
 
 
         // Return the nicely done up View to the ListView
