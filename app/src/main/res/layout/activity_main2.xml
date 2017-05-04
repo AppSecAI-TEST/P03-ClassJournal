@@ -8,6 +8,7 @@
     tools:context="p03_classjournal.android.myapplicationdev.com.p03_classjournal.Main2Activity">
 
     <ListView
+        android:id="@+id/lvGrade"
         android:layout_width="match_parent"
         android:layout_height="458dp" />
 
