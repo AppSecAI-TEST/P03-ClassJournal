@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    Intent i = new Intent(MainActivity.this, Main2Activity.class);
-                    i.putExtra("module_code", "C347");
-                    startActivity(i);
+//                    Intent i = new Intent(MainActivity.this, Main2Activity.class);
+//                    i.putExtra("module_code", "C347");
+//                    startActivity(i);
 
 
 
