@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.view.View;
@@ -30,6 +31,7 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        getSupportActionBar().setTitle("Info for C347");
         btnAdd = (Button)findViewById(R.id.btnAdd);
         lvGrade = (ListView)findViewById(R.id.lvGrade);
         grade = new ArrayList<ArrayList<String>>();
@@ -43,6 +45,8 @@ public class Main2Activity extends AppCompatActivity {
 
         aa = new GradeAdapter(Main2Activity.this, R.layout.row, grade);
         lvGrade.setAdapter(aa);
+
+
 
 
 

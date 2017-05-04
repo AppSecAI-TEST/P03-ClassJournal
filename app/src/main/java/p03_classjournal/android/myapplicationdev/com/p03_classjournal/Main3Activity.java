@@ -3,6 +3,7 @@ package p03_classjournal.android.myapplicationdev.com.p03_classjournal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,6 +36,7 @@ public class Main3Activity extends AppCompatActivity {
 
         tvDG.setText(title);
         tvWeek.setText("Week " + week);
+        getSupportActionBar().setTitle("Add data for Week"+ week);
         int resID = Main3Activity.this.getResources().getIdentifier(image , "drawable", Main3Activity.this.getPackageName());
         iv.setImageResource(resID);
 
