@@ -21,7 +21,7 @@ public class GradeAdapter extends ArrayAdapter<ArrayList<String>> {
     private TextView tvGrade, tvTitle;
     private ImageView ivImage;
 
-    public GradeAdapter(Context context, int resource, ArrayList<ArrayList<String>> objects, ArrayList<ArrayList<String>> grade){
+    public GradeAdapter(Context context, int resource, ArrayList<ArrayList<String>> objects){
         super(context, resource, objects);
         this.grade = grade;
         // Store the food that is passed to this adapter

@@ -30,6 +30,10 @@ public class Main2Activity extends AppCompatActivity {
         module_grade.add("asd");
         grade.add(module_grade);
 
+        aa = new GradeAdapter(Main2Activity.this, R.layout.row, grade);
+        lvGrade.setAdapter(aa);
+
+
 
 
 
