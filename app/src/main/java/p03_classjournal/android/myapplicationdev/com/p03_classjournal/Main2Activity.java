@@ -19,6 +19,7 @@ public class Main2Activity extends AppCompatActivity {
     ArrayAdapter aa;
     ArrayList<String> module_grade;
     ArrayList<ArrayList<String>> grade;
+    int requestCode = 1;
 
 
     Button btnInfo;
@@ -34,7 +35,9 @@ public class Main2Activity extends AppCompatActivity {
         module_grade = new ArrayList<String>();
         module_grade.add("DG");
         module_grade.add("C");
-        module_grade.add("asd");
+        module_grade.add("Week "+(grade.size()+1));
+        module_grade.add("dg");
+
         grade.add(module_grade);
 
         aa = new GradeAdapter(Main2Activity.this, R.layout.row, grade);
@@ -47,6 +50,11 @@ public class Main2Activity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(Main2Activity.this, Main3Activity.class);
+                i.putExtra("week",grade.size()+1);
+                i.putExtra("image", module_grade.get(3));
+                i.putExtra("title", "DG");
+                startActivityForResult(i,requestCode);
 
             }
         });
@@ -83,6 +91,31 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK){
+            if (data != null) {
+                // Get data passed back from 2nd activity
+                String grade2= data.getStringExtra("grade");
+                if(requestCode == this.requestCode){
+                    module_grade.add("DG");
+                    module_grade.add(grade2);
+                    module_grade.add("Week "+(grade.size()+1));
+                    module_grade.add("dg");
+
+                    grade.add(module_grade);
+                    aa = new GradeAdapter(Main2Activity.this, R.layout.row, grade);
+                    lvGrade.setAdapter(aa);
+
+                }
+
+            }
+        }
+    }
+
 
 
 
