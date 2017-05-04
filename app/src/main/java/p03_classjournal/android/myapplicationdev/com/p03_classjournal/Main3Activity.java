@@ -36,6 +36,8 @@ public class Main3Activity extends AppCompatActivity {
 
         tvDG.setText(title);
         tvWeek.setText("Week " + week);
+//        int resID = Main3Activity.this.getResources().getIdentifier(image , "drawable", Main3Activity.this.getPackageName());
+//        iv.setImageResource(resID);
 //        iv.setImageResource(R.drawable.image);
 
 
@@ -60,3 +62,4 @@ public class Main3Activity extends AppCompatActivity {
 
     }
 }
+
